@@ -7,21 +7,13 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('Build') {
+        stage('Git Clone') {
             steps {
-                echo 'Building '
+                echo 'Cloning  :)'
+                git branch: 'main', credentialsId: 'MyNodeJsApp', url: 'https://github.com/akramLh005/JenkinsRepo.git'
             }
         }
-        stage('deploy') {
-            steps {
-                echo 'Deploying'
-            }
-        }
-        stage('test') {
-            steps {
-                echo 'Testing'
-            }
-        }
+    
         
     }
 }
